@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta tag -->
+  <title>WASM Hasher</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    #hashResult {
+      word-break: break-all;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="bg-light p-5">
+
+  <div class="container">
+    <h2 class="mb-4">WASM File Hasher</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <input type="file" class="form-control mb-3" id="fileInput">
+        <select class="form-control mb-3" id="algorithmSelect">
+          <option value="sha1">SHA-1</option>
+          <option value="sha256">SHA-256</option>
+          <option value="sha512">SHA-512</option>
+          <option value="sha3-512">SHA-3 (512-bit)</option>
+          <option value="md5">MD5</option>
+        </select>
+        <button class="btn btn-primary mb-3" id="generateButton">Generate Hash</button>
+        <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div id="hashResult" class=" col-12 alert alert-info" role="alert" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- jQuery, Popper.js, and Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
